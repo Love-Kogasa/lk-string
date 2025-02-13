@@ -1,0 +1,23 @@
+{
+  "name": "lk-string",
+  "version": "1.0.0",
+  "description": " (Not lz-string) A simple string compress lib.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Love-Kogasa/lk-string.git"
+  },
+  "keywords": [
+    "compress",
+    "string"
+  ],
+  "author": "Love-Kogasa",
+  "license": " MIT",
+  "bugs": {
+    "url": "https://github.com/Love-Kogasa/lk-string/issues"
+  },
+  "homepage": "https://github.com/Love-Kogasa/lk-string#readme"
+}

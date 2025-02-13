@@ -7,7 +7,7 @@ lk-string ~~一个盗版的lz-string~~一个小巧的字符串压缩库
 您可以通过(候补)在线试用LKstring压缩  
 JavaScript示例
 ```js
-var lkstring = require( "lk-string" ),
+var lkstring = require( "lkstring" ),
   string = "123456789 hello, world",
   code = lkstring.encode( string )
 console.log( "源字符串: \t%s\n长度: %d", string, string.length )

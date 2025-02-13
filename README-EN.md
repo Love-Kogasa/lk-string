@@ -3,7 +3,7 @@ lk-string ~~A pirated version of lz-string~~ A compact string compression librar
 Used for quick data compression, currently supports only some English characters and most English symbols (you can encode special characters as URL encoding and then compress them).
 
 ## Usage
-You can try LKstring compression online (alternative).  
+You can try LKstring compression online ([There](http://lk-string.lapis-net.top/page/)).  
 JavaScript example:
 ```javascript
 var lkstring = require("lkstring"),

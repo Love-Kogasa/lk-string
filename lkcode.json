@@ -1,0 +1,9 @@
+[  "",
+  "1234567890abcdefghijklmnopqrstuvwxyz",
+  "{}[]=\n,\"' :abcdefghijklmnopqrstuvwxyz",
+  "{}[]=\n,\"' :ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  "%0123456789=&$nabcdefghijklmnopqrstu",
+  "%0123456789=&$ABCDEFGHIJKLMNOPQRSTU",
+  "#|_&-+()/*\"':;!?[]{}=<>%\\,.$~…@` \t\n–",
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+]

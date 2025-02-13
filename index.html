@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <style>
+     body { padding: 5vw; }
+     textarea { height: 10ch; width: 40ch; display: block; margin: 0px; }
+     h2, p { margin: 0px; }
+   </style>
+  </head>
+  <body>
+    <h2>LKstring</h2>
+    <p>一个 Quickly & Easy 的字符压缩库<br>当然，对于大量的数据压缩，还是用lz-string好一些</p>
+    <br>
+    <b>原字符串(非英文字符会被编码为URL编码)</b>
+    <textarea id="source"></textarea>
+    URLCode: <span id="real"></span><br>
+    Length: <span id="snc">0</span>
+    <br><br>
+    <b>压缩结果</b>
+    <textarea id="result"></textarea>
+    Length: <span id="onc">0</span>
+    <br><br>
+    <input type="file" id="file" accept="text/*" style="display: none;">
+    <div align=right>
+      <p>上传文件以批量压缩(仅支持文本文件)</p>
+      <button id="upload">上传</button>
+    </div>
+    <script src="page.js"></script>
+  </body>
+</html>

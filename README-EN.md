@@ -15,7 +15,7 @@ console.log("Decompressed string: \t%s", lkstring.decode(code))
 /** --- Output ---
  * Original string:    123456789 hello, world
  * Length: 22
- * Compressed string:    y$&p^AyQq[ff]
+ * Compressed string:    ÿ$&pºĄÿQʗ̮ΊťΠ̦
  * Length: 14
  * Decompressed string:    123456789 hello, world
  */

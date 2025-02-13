@@ -6,7 +6,7 @@ Used for quick data compression, currently supports only some English characters
 You can try LKstring compression online (alternative).  
 JavaScript example:
 ```javascript
-var lkstring = require("lk-string"),
+var lkstring = require("lkstring"),
 string = "123456789 hello, world",
 code = lkstring.encode(string)
 console.log("Original string: \t%s\nLength: %d", string, string.length)

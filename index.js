@@ -1,7 +1,25 @@
 var lkstring = {
+  split( string, len ){
+    var out = [], index = 0
+    for( let char of string ){
+      if( char == "\xff" ){
+        out.push( "\xff" )
+        out.push( "" )
+        continue;
+      }else if( index % len == 0 ){
+        out.push( "" )
+      }
+      index += 1
+      out[ out.length - 1 ] += char
+    }
+    return out
+  },
   encode( string ){
-    var data = require( "./lkcode.json" )
+    // var data = require( "./lkcode.json" )
     var outData = [], bytes = [], index = false
+    // 创建词典字符集
+    var dcts = dict( string ).join( "" )
+    var data = [""].concat(this.split( dcts, 36 ))
     for( let char of string ){
       let charIndex
       if( index !== false && ((charIndex = data[index].indexOf( char )) + 1) ){
@@ -13,7 +31,7 @@ var lkstring = {
         outData = outData.concat( [ "\xff", index.toString( 36 ), charIndex.toString( 36 )] )
       }
     }
-    for( let byte of split( outData, 2 ) ){
+    for( let byte of this.split( outData, 2 ) ){
       if( byte == "\xff" ){
         bytes.push( "\xff" )
       } else{
@@ -25,22 +43,7 @@ var lkstring = {
     }
     //console.log(bytes)
     delete outData
-    return bytes.join( "" )
-    function split( string, len ){
-      var out = [], index = 0
-      for( let char of string ){
-        if( char == "\xff" ){
-          out.push( "\xff" )
-          out.push( "" )
-          continue;
-        }else if( index % len == 0 ){
-          out.push( "" )
-        }
-        index += 1
-        out[ out.length - 1 ] += char
-      }
-      return out
-    }
+    return dcts + bytes.join( "" )
     function where( char ){
       for( let line of data ){
         if( line.includes( char ) ){
@@ -49,13 +52,24 @@ var lkstring = {
       }
       throw "Char " + char + " not supported"
     }
+    function dict( string ){
+      var map = new Map(), charlist = []
+      for( let char of string ){
+        map.set( char, (map.get( char ) || 0) + 1 )
+      }
+      var arr = [...map.entries()].sort( (a,b) => b[1] - a[1] )
+      for( let child of arr ){
+        charlist.push( child[0] )
+      }
+      return charlist
+    }
   },
   decode( code ){
-    var data = require( "./lkcode.json" )
+    var data = [""].concat(this.split( code.split( "\xff" )[0], 36 ))
     var index, out = "", codeList = code.split( "\xff" ).slice(1)
     for( let chars of codeList){
       for( let charIndex in chars.split( "" )){
-        let char = chars[charIndex].charCodeAt().toString(36)
+        let char = chars[charIndex].charCodeAt().toString(36).padStart( 2, "0" )
         if( charIndex == 0 ){
           index = parseInt( char[0], 36 )
           char = char.slice( 1 )

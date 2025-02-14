@@ -31,7 +31,7 @@ var lkstring = {
         outData = outData.concat( [ "\xff", index.toString( 36 ), charIndex.toString( 36 )] )
       }
     }
-    for( let byte of this.split( outData, 2 ) ){
+    for( let byte of this.split( outData, 3 ) ){
       if( byte == "\xff" ){
         bytes.push( "\xff" )
       } else{
@@ -69,7 +69,7 @@ var lkstring = {
     var index, out = "", codeList = code.split( "\xff" ).slice(1)
     for( let chars of codeList){
       for( let charIndex in chars.split( "" )){
-        let char = chars[charIndex].charCodeAt().toString(36).padStart( 2, "0" )
+        let char = chars[charIndex].charCodeAt().toString(36).padStart( 3, "0" )
         if( charIndex == 0 ){
           index = parseInt( char[0], 36 )
           char = char.slice( 1 )

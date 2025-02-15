@@ -70,13 +70,16 @@ var lkstring = {
     var index, out = "", codeList = code.split( "\xff" ).slice(1)
     for( let chars of codeList){
       for( let charIndex in chars.split( "" )){
-        let char = chars[charIndex].charCodeAt().toString(36).padStart( 3, "0" )
+        let char = chars[charIndex].charCodeAt().toString(36)
         if( charIndex == 0 ){
           index = parseInt( char[0], 36 )
           char = char.slice( 1 )
+        } else {
+          char = char.padStart( 3, "0" )
         }
         // 忘了我想写啥了
         for( let byte of char ){
+          // console.log( index, parseInt( byte, 36 ))
           out += data[index][parseInt( byte, 36 )]
         }
       }

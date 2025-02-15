@@ -1,7 +1,7 @@
 # lk-string
 [English](https://github.com/Love-Kogasa/lk-string/blob/main/README-EN.md).  
 lk-string ~~一个盗版的lz-string~~一个小巧的字符串压缩库  
-用于对数据进行快速压缩，目前仅支持部分英文字符和大部分英文符号(您可以把特殊字符编码为URL编码然后进行压缩)  
+用于对字符串数据进行压缩  
 
 ## 使用
 您可以通过([ClickMe](http://lk-string.lapis-net.top/page/))在线试用LKstring压缩  
